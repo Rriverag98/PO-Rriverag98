@@ -10,7 +10,7 @@ package cuentabancaria;
  * @author Rodrigo
  */
 public class CuentaBancaria {
-     private String nombreDeDueño;
+     private String nombreDeDueño; 
      private String direccionDeDueño;
      private String sexoDeDueño;
      private String numeroDeCuenta;
@@ -42,11 +42,11 @@ public CuentaBancaria() {
     }
     
     // color Getter and Setter
-    public String obtennombreDeDueño() {
+    public String getNombreDeDueño() {
         return nombreDeDueño;
     }
     
-    public void ponnombreDeDueño(String nombreDeDueño) {
+    public void setNombreDeDueño(String nombreDeDueño) {
         /* Si el usuario envia una cadena vacia o null, la propiedad 
         tendra el valor "Sin contenido definido"; de lo contrario, tomara 
         el valor enviado en el mensaje */
@@ -56,10 +56,10 @@ public CuentaBancaria() {
              this.nombreDeDueño = nombreDeDueño;
         }
     }
-    public String obtendireccionDeDueño() {
+    public String getDireccionDeDueño() {
         return direccionDeDueño;
     }
-    public void pondireccionDeDueño(String direccionDeDueño) {
+    public void setDireccionDeDueño(String direccionDeDueño) {
         /* Si el usuario envia una cadena vacia o null, la propiedad 
         tendra el valor "Sin contenido definido"; de lo contrario, tomara 
         el valor enviado en el mensaje */
@@ -69,10 +69,10 @@ public CuentaBancaria() {
              this.direccionDeDueño = direccionDeDueño;
         }
     }
-    public String obtenSexoDeDueño() {
+    public String getSexoDeDueño() {
         return sexoDeDueño;
     }
-    public void SexoDeDueño(String sexoDeDueño) {
+    public void setSexoDeDueño(String sexoDeDueño) {
         /* Si el usuario envia una cadena vacia o null, la propiedad 
         tendra el valor "Sin contenido definido"; de lo contrario, tomara 
         el valor enviado en el mensaje */
@@ -82,10 +82,10 @@ public CuentaBancaria() {
              this.sexoDeDueño = sexoDeDueño;
         }
     }
-     public String obtenNumeroDeCuenta() {
+     public String getNumeroDeCuenta() {
         return numeroDeCuenta;
     }
-    public void NumeroDeCuenta(String numeroDeCuenta) {
+    public void setNumeroDeCuenta(String numeroDeCuenta) {
         /* Si el usuario envia una cadena vacia o null, la propiedad 
         tendra el valor "Sin contenido definido"; de lo contrario, tomara 
         el valor enviado en el mensaje */
@@ -95,10 +95,12 @@ public CuentaBancaria() {
              this.numeroDeCuenta = numeroDeCuenta;
         }
     }
-    public int obtenEdadDeDueño(){
+    public int getEdadDeDueño(){
         return this.edadDeDueño;
     }
-    public boolean ponEdadDeDueño(int EdadDeDueño){
+    public boolean setEdadDeDueño(int EdadDeDueño){
+        /* En teoria el dueño no deberia ser menor de edad(18) por lo que si
+        envia un valor menor a este, la cuenta no deberia aceptarlo */ 
         if(EdadDeDueño <18){
             return false;
         }else{
@@ -106,33 +108,36 @@ public CuentaBancaria() {
             return true;
         }
     }
-    public int obtenSaldo(){
+    public int getSaldo(){
         return this.saldo;
     }
-    public boolean ponSaldo(int saldo){
-        if(saldo <=0){
+    public boolean setSaldo(int saldo){
+        /* La cuenta no puede tener un saldo negativo por lo que un valor menor a 0 no es aceptable */ 
+        if(saldo <0){
             return false;
         }else{
             this.saldo=saldo;
             return true;
         }
     }
-    public int obtenIngresos(){
+    public int getIngresos(){
         return this.ingresos;
     }
-    public boolean ponIngresos(int ingresos){
-        if(ingresos <=0){
+    public boolean setIngresos(int ingresos){
+        /* La cuenta no puede tener un ingreso negativo por lo que un valor menor a 0 no es aceptable */ 
+        if(ingresos <0){
             return false;
         }else{
             this.ingresos=ingresos;
             return true;
         }
     }
-    public int obtenEgresos(){
+    public int getEgresos(){
         return this.egresos;
     }
-    public boolean ponEgresos(int egresos){
-        if(egresos <=0){
+    public boolean setEgresos(int egresos){
+        /* La cuenta no puede tener un egreso negativo por lo que un valor menor a 0 no es aceptable */ 
+        if(egresos <0){
             return false;
         }else{
             this.egresos=egresos;
