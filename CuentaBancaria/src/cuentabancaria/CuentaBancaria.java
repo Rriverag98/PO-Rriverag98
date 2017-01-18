@@ -135,9 +135,9 @@ public CuentaBancaria() {
     public int getEgresos(){
         return this.egresos;
     }
-    public boolean setEgresos(int egresos){
-        /* La cuenta no puede tener un egreso negativo por lo que un valor menor a 0 no es aceptable */ 
-        if(egresos <0){
+    public boolean setEgresos(int egresos, int saldo){
+        /* La cuenta no puede tener un egreso mayor a su saldo */ 
+        if(egresos > saldo){
             return false;
         }else{
             this.egresos=egresos;
