@@ -10,13 +10,18 @@ package interfacesexercises;
  * @author Rodrigo
  */
 public class Human {
-    public Human(String name){
+    
+    private String name;
+
+    public Human(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return "Human{" + '}';
+        return "Human{" + "name=" + name + '}';
     }
+    
 
     
 }
